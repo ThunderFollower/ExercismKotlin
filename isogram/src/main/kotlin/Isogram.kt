@@ -1,11 +1,12 @@
 object Isogram {
 
     fun isIsogram(input: String): Boolean {
-        return (input.trim().length == input.trim()
-                                            .toLowerCase()
-                                            .decapitalize()
-                                            .toCharArray()
-                                            .toSet()
-                                            .size)
+        val cleanInput = input.filter { it.isLetter() }
+        return (cleanInput.length == cleanInput
+                                                .toLowerCase()
+                                                .toCharArray()
+                                                .distinct()
+                                                .size)
+
     }
 }
